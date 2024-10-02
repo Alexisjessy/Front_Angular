@@ -1,0 +1,18 @@
+<!-- Si des produits sont disponibles, on les affiche -->
+<div *ngIf="products.length > 0"> 
+  <ul> 
+    <li *ngFor="let product of products"> 
+      {{ product.name }} - {{ product.price }}€ - {{product.category.name}}
+    </li> 
+  </ul> 
+</div> 
+
+<!-- Message si aucun produit n'est disponible -->
+<div *ngIf="products.length === 0"> 
+  No products available. 
+</div> 
+
+<!-- Bouton pour rediriger vers la page d'ajout de produit -->
+<div class="add-product-button">
+  <button (click)="goToAddProduct()">Add New Product</button>
+</div>
